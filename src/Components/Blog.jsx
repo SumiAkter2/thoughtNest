@@ -1,6 +1,6 @@
 import { FaRegBookmark } from "react-icons/fa";
 
-const Blog = ({ blog, handleBookmark }) => {
+const Blog = ({ blog, handleBookmark, handleMarkRead }) => {
   return (
     <div className="mx-6 mb-12">
       <img className="w-full" src={blog.cover} alt="blog-img" />
@@ -31,9 +31,12 @@ const Blog = ({ blog, handleBookmark }) => {
           </a>
         ))}
       </div>
-      <a href="#" className="underline text-blue-800 ">
+      <button
+        className="underline text-blue-800 cursor-pointer"
+        onClick={() => handleMarkRead(blog?.reading_time)}
+      >
         Mark as read
-      </a>
+      </button>
     </div>
   );
 };
