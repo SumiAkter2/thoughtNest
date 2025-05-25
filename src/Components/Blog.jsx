@@ -1,4 +1,6 @@
-const Blog = ({ blog }) => {
+import { FaRegBookmark } from "react-icons/fa";
+
+const Blog = ({ blog, handleBookmark }) => {
   return (
     <div className="mx-6 mb-12">
       <img className="w-full" src={blog.cover} alt="blog-img" />
@@ -10,7 +12,15 @@ const Blog = ({ blog }) => {
             <p className="text-gray-500">{blog.posted_date}</p>
           </div>
         </div>
-        <p className="text-gray-500">{blog.reading_time} min read</p>
+        <div className="text-gray-500 flex justify-center items-center gap-x-2">
+          <p>{blog.reading_time} min read</p>
+          <button
+            className="cursor-pointer"
+            onClick={() => handleBookmark(blog)}
+          >
+            <FaRegBookmark />
+          </button>
+        </div>
       </div>
       <h1 className="my-6 text-4xl font-bold leading-normal">{blog.title}</h1>
       <div className="flex gap-x-2 mb-6 text-gray-500">
