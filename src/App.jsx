@@ -1,24 +1,16 @@
-import { useState } from "react";
-import "./App.css";
+import Blogs from "./Components/Blogs";
+import BookMarks from "./Components/BookMarks";
+import Header from "./Components/Header";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <h1 className="text-5xl font-bold">Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+    <div className="max-w-6xl mx-auto">
+      <Header />
+      <div className="md:flex justify-between mx-4 mt-6">
+        <Blogs />
+        <BookMarks />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   );
 }
 
