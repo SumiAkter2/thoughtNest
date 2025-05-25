@@ -15,9 +15,15 @@ function App() {
     // console.log("added :", newBookmark);
   };
   // handle for mark as read:
-  const handleMarkRead = (time) => {
+  const handleMarkRead = (id, time) => {
     const newTime = readingTime + time;
+
     setReadingTime(newTime);
+    //     // remove from bookmark:
+    const remainingBookMark = bookmark.filter(
+      (bookmarkItem) => bookmarkItem.id !== id
+    );
+    setBookmark(remainingBookMark);
     console.log(newTime);
   };
   return (

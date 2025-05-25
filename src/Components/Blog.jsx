@@ -33,7 +33,7 @@ const Blog = ({ blog, handleBookmark, handleMarkRead }) => {
       </div>
       <button
         className="underline text-blue-800 cursor-pointer"
-        onClick={() => handleMarkRead(blog?.reading_time)}
+        onClick={() => handleMarkRead(blog.id, blog?.reading_time)}
       >
         Mark as read
       </button>
