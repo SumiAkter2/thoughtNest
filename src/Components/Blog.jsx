@@ -1,6 +1,7 @@
-import { FaRegBookmark } from "react-icons/fa";
+import { FaBookmark, FaRegBookmark } from "react-icons/fa";
 
-const Blog = ({ blog, handleBookmark, handleMarkRead }) => {
+const Blog = ({ blog, handleBookmark, handleMarkRead, bookmark }) => {
+  const isBookmarked = bookmark.some((b) => b.id === blog.id);
   return (
     <div className="mx-6 mb-12">
       <img className="w-full" src={blog.cover} alt="blog-img" />
@@ -18,7 +19,11 @@ const Blog = ({ blog, handleBookmark, handleMarkRead }) => {
             className="cursor-pointer"
             onClick={() => handleBookmark(blog)}
           >
-            <FaRegBookmark />
+            {isBookmarked ? (
+              <FaBookmark className="text-red-500" />
+            ) : (
+              <FaRegBookmark />
+            )}
           </button>
         </div>
       </div>

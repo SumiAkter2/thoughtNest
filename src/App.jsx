@@ -31,6 +31,7 @@ function App() {
       <Header />
       <div className="md:flex justify-between mx-4 mt-6">
         <Blogs
+          bookmark={bookmark}
           handleBookmark={handleBookmark}
           handleMarkRead={handleMarkRead}
         />
